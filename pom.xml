@@ -27,6 +27,20 @@
             <artifactId>h2</artifactId>
             <version>2.3.230</version>
         </dependency>
+
+        <!-- 강의와 다르게 Java 11 이후 javax.xml.bind 제거 되어 의존성 추가 필요 -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <!-- 위와 동일한 내용으로 런타임 구현체도 추가 필요 -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
     </dependencies>
 
 </project>
