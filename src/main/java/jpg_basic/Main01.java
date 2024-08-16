@@ -6,7 +6,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.util.List;
 
-public class Main {
+public class Main01 {
     public static void main(String[] args) {
         //
         // 2. persistence -> 생성 EntityManagerFactory
