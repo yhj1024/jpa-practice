@@ -74,6 +74,9 @@ public class Main03 {
             // memberB 도 마찬가지로 1차 캐시에 안에 들어가면서 동시에
             // insert 쿼리를 생성하여 쓰기 지연 SQL 저장소에 쌓는다
 
+            // 그리고 commit 이 되는 시점에
+            // 쿼리가 한번에 나가고 이거를 flush 라고 한다
+
             tx.commit();
 
         }catch (Exception e) {

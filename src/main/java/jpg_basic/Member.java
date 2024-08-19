@@ -11,9 +11,16 @@ public class Member {
 
     @Id // JPA 한테 Key는 알려줘야 함
     private Long id;
-
-//    @Column(name="username") 맵핑할 컬럼명이 username 일 때 이렇게 하면 됨
+    //    @Column(name="username") 맵핑할 컬럼명이 username 일 때 이렇게 하면 됨
     private String name;
+
+    public Member() {
+    }
+
+    public Member(Long id, String name) { // 생성자 사용시 기본생성자가 반드시 필요
+        this.id = id;
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
