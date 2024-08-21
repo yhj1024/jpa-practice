@@ -20,7 +20,7 @@ public class Main06 {
         // final 클래스, enum, interface, inner 클래스 사용 X
         // 저장할 필드에 final 사용 X
 
-        //
+        // Member2 클래스로 이동
 
 
     }

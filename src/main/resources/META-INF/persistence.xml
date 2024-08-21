@@ -17,7 +17,30 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments"  value="true"/>
 <!--            <property name="hibernate.jdbc.batch_size"  value="10"/>-->
-            <!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
+                        <property name="hibernate.hbm2ddl.auto" value="create" />
+
+            <!--
+                create-drop : 애플리케이션 종료 시점에 테이블 삭제
+                update : 변경분만 반영 (운영 DB에는 사용하면 안됨)
+                예: create로 생성 후 특정 테이블 필드만 추가했다고 하면 컬럼만 추가됨
+                삭제는 안되고 추가만 됨
+                validate : 엔티티 테이블 정상 매핑을 확인함
+                예: 테이블에 없는 컬럼 객체에 추가하고 실행하면 오류남
+                none : 관례상 none 쓰는거고 aslkdjflaskdjf 이렇게 넣어도됨 아무것도 사용하지 않음
+            -->
+
+            <!--
+                org.hibernate.dialect.H2Dialect
+                방언에 따라 DDL 다르게 생성된다
+            -->
+
+            <!--
+                운영 장비에는 절대 create, create-drop, update 사용 하면 안 된다
+                개발 초기 단계에는 create 또는 update (로컬)
+                테스트 서버는 update 또는 validate (가급적이면 테스트 서버도 안 쓰는게 낫다)
+                스테이징과 운영 서버는 validate 또는 none
+            -->
+
         </properties>
     </persistence-unit>
 
