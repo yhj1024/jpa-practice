@@ -2,6 +2,7 @@ package jpg_basic;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class Main07 {
@@ -12,7 +13,21 @@ public class Main07 {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em = emf.createEntityManager();
-        Member3 member = new Member3();
+        EntityTransaction tx = em.getTransaction();
+        tx.begin();
+
+        try {
+//            Member3 member = new Member3();
+//            member.setUsername("D");
+//            em.persist(member);
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            tx.rollback();
+        } finally {
+            em.close();
+        }
+            emf.close();
     }
 
 

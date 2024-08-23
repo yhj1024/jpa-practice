@@ -11,7 +11,13 @@ import java.util.Date;
 //        sequenceName = "MEMBER_SEQ",
 //        initialValue = 1, allocationSize = 1
 //) // 시퀀스를 직접 만들 수도 있다
-public class Member3 {
+@TableGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        table = "MY_SEQUENCE",
+        pkColumnValue = "MEMBER_SEQ",
+        allocationSize = 1
+)
+public class Member4 {
 
      // 기본키 지정
     /*
@@ -23,7 +29,8 @@ public class Member3 {
             GenerationType.SEQUENCE : 오라클 같은 데이터 베이스에서 사용, 테이블 만들 때 시퀀스를 만들고 처리하게 된다.
      */
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO, generator = "MEMBER_SEQ_GENERATOR") 위에 선언한 seq 가 실행됨
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    generator = "MEMBER_SEQ_GENERATOR")
     private Long id;
 
     @Column(name="name") // name db필드명
@@ -56,7 +63,7 @@ public class Member3 {
      */
     private RoleType roleType;
 
-    @Temporal(TemporalType.TIMESTAMP) // 
+    @Temporal(TemporalType.TIMESTAMP) //
     /*
         LocalDate (Date 타입으로 생성됨), LocalDateTime(Timestamp로 생성됨) 으로 요새는 다 지원함
         TemporalType 을 사용하면
@@ -154,7 +161,7 @@ public class Member3 {
         this.temp = temp;
     }
 
-    public Member3() {
+    public Member4() {
 
     }
 
