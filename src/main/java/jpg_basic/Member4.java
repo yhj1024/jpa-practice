@@ -6,17 +6,17 @@ import java.math.BigInteger;
 import java.util.Date;
 
 @Entity
-//@SequenceGenerator(
-//        name="MEMBER_SEQ_GENERATOR",
-//        sequenceName = "MEMBER_SEQ",
-//        initialValue = 1, allocationSize = 1
-//) // 시퀀스를 직접 만들 수도 있다
-@TableGenerator(
-        name = "MEMBER_SEQ_GENERATOR",
-        table = "MY_SEQUENCE",
-        pkColumnValue = "MEMBER_SEQ",
-        allocationSize = 1
-)
+@SequenceGenerator(
+        name="MEMBER_SEQ_GENERATOR",
+        sequenceName = "MEMBER_SEQ",
+        initialValue=1, allocationSize=1
+) // 시퀀스를 직접 만들 수도 있다
+//@TableGenerator(
+//        name = "MEMBER_SEQ_GENERATOR",
+//        table = "MY_SEQUENCE",
+//        pkColumnValue = "MEMBER_SEQ",
+//        allocationSize = 1
+//) // 시퀀스 테이블 생성도 가능
 public class Member4 {
 
      // 기본키 지정
@@ -30,7 +30,7 @@ public class Member4 {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-    generator = "MEMBER_SEQ_GENERATOR")
+    generator = "MEMBER_SEQ")
     private Long id;
 
     @Column(name="name") // name db필드명
