@@ -7,8 +7,9 @@
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/> <!-- 파일을 직접 접근 시 동시 접근 문제로 tcp 로 넣음 -->
+            <property name="javax.persistence.jdbc.password" value="sa"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/jpashop"/> <!-- 파일을 직접 접근 시 동시 접근 문제로 tcp 로 넣음 -->
+            <!--            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/> &lt;!&ndash; 파일을 직접 접근 시 동시 접근 문제로 tcp 로 넣음 &ndash;&gt;-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <!-- dialect : 포준 SQL ANSI 외에 데이터 베이스마다 가지고 있는 특정 문법 (방언) 을 맞춰주는 설정 하이버네이트 전용 옵션 -->
 

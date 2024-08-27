@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
-@Entity
+//@Entity
 //@SequenceGenerator(
 //        name="MEMBER_SEQ_GENERATOR",
 //        sequenceName = "MEMBER_SEQ",

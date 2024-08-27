@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity // JPA 에서 관리할 엔티티 라고 지정함 (name 이라는 속성이 있는데 기본값은 현재 클래스 명과 동일)
+//@Entity // JPA 에서 관리할 엔티티 라고 지정함 (name 이라는 속성이 있는데 기본값은 현재 클래스 명과 동일)
 // 다른 패키지에 같은 클래스가 중복되는 경우 사용할 수도 있지만 기본값을 대부분 씀 JPA가 내부적으로 관리할 때 쓰는 이름이라고 생각 하면 됨)
 //@Table(name = "USER") 
 

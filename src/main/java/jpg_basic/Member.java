@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity // 어노테이션 추가 필요
+//@Entity // 어노테이션 추가 필요
 //@Table(name = "USER") // 테이블 이름이 Member가 아니라 USER일 때
 public class Member {
 
