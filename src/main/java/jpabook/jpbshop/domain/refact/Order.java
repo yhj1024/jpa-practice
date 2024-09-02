@@ -1,7 +1,9 @@
-package jpabook.jpbshop.domain;
+package jpabook.jpbshop.domain.refact;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ORDERS") // ORDER 가 SQL 예약어로 걸린 경우가 있어 ORDERS 로 사용
@@ -12,8 +14,16 @@ public class Order {
     @Column(name = "ORDER_ID")
     private Long id;
 
-    @Column(name = "MEMBER_ID")
-    private Long memberId;
+    // 이거를 아래 처럼 객체로 대체 한다
+//    @Column(name = "MEMBER_ID")
+//    private Long memberId;
+
+    @ManyToOne
+    @JoinColumn(name="MEMBER_ID")
+    private Member member;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     private LocalDateTime orderDate;
     // 테이블 필드에 orderDate 이대로 생성되는데 자바는 카멜인데
@@ -33,12 +43,12 @@ public class Order {
         this.id = id;
     }
 
-    public Long getMemberId() {
-        return memberId;
+    public Member getMember() {
+        return member;
     }
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public LocalDateTime getOrderDate() {
@@ -58,6 +68,7 @@ public class Order {
     }
 
     public void addOrderItem(OrderItem orderItem) {
-
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
     }
 }
