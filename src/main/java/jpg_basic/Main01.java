@@ -105,7 +105,7 @@ public class Main01 {
         // JPQL로 회원 전체 검색
         entityTransaction.begin();
         // * 대신 m 을 씀 객체를 대상으로 조회하는 개념
-        List<Member> findMembers = entityManager.createQuery("select m from Member as m", Member.class)
+        List<Member> findMembers = entityManager.createQuery("select m from Member5Domain as m", Member.class)
                 .setFirstResult(0) // 페이징 시작 row
                 .setMaxResults(5) // 페이징 개수
                 .getResultList();

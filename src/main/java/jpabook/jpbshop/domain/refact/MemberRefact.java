@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member {
+public class MemberRefact {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO) // 생략 시 오토임
     @Column(name = "MEMBER_ID")
     private Long id;
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "memberRefact")
     private List<Order> orders = new ArrayList<>();
     // 관계상 new ArrayList (JPA, 하이버네이트)
 

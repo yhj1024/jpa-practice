@@ -20,7 +20,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name="MEMBER_ID")
-    private Member member;
+    private MemberRefact memberRefact;
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
@@ -43,12 +43,12 @@ public class Order {
         this.id = id;
     }
 
-    public Member getMember() {
-        return member;
+    public MemberRefact getMember() {
+        return memberRefact;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setMember(MemberRefact memberRefact) {
+        this.memberRefact = memberRefact;
     }
 
     public LocalDateTime getOrderDate() {
