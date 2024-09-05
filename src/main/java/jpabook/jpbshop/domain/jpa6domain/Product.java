@@ -12,7 +12,7 @@ public class Product {
 
     private String name;
 
-    @ManyToMany(mappedBy = "MEMBER_PRODUCT") // 하나는 mappedBy 처리
+    @ManyToMany(mappedBy = "products") // 하나는 mappedBy 처리
     private List<Member6Domain> members;
 
     // 다대일로 풀어냄
