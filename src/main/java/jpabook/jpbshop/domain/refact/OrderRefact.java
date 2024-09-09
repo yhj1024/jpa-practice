@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDERS") // ORDER 가 SQL 예약어로 걸린 경우가 있어 ORDERS 로 사용
-public class Order {
+public class OrderRefact {
     // ENTITY 에 index나, 제약 조건 같이 넣어 주면 개발자가 entity만 보고 파악할 수 있어 편리하다
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,7 @@ public class Order {
     private MemberRefact memberRefact;
 
     @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItems = new ArrayList<>();
+    private List<OrderItemRefact> orderItems = new ArrayList<>();
 
     private LocalDateTime orderDate;
     // 테이블 필드에 orderDate 이대로 생성되는데 자바는 카멜인데
@@ -33,7 +33,7 @@ public class Order {
     // Column으로 일일히 매핑 해주는 방법도 있음!
 
     @Enumerated(EnumType.STRING) // ORDINAL 오디널로 하면 안됨 순서로 들어가서
-    private OrderStatus status;
+    private OrderStatusRefact status;
 
     public Long getId() {
         return id;
@@ -59,15 +59,15 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public OrderStatus getStatus() {
+    public OrderStatusRefact getStatus() {
         return status;
     }
 
-    public void setStatus(OrderStatus status) {
+    public void setStatus(OrderStatusRefact status) {
         this.status = status;
     }
 
-    public void addOrderItem(OrderItem orderItem) {
+    public void addOrderItem(OrderItemRefact orderItem) {
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }

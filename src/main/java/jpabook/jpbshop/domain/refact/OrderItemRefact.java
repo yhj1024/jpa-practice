@@ -3,7 +3,7 @@ package jpabook.jpbshop.domain.refact;
 import javax.persistence.*;
 
 @Entity
-public class OrderItem {
+public class OrderItemRefact {
 
     @Id @GeneratedValue
     @Column(name = "ORDER_ITEM_ID")
@@ -13,11 +13,11 @@ public class OrderItem {
 //    private Long orderId;
     @ManyToOne
     @JoinColumn(name="ORDER_ID")
-    private Order order;
+    private OrderRefact order;
 
     @ManyToOne
     @JoinColumn(name="ITEM_ID")
-    private Item item;
+    private ItemRefact item;
 
     private int orderPrice;
     private int count;
@@ -30,19 +30,19 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Order getOrder() {
+    public OrderRefact getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(OrderRefact order) {
         this.order = order;
     }
 
-    public Item getItem() {
+    public ItemRefact getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(ItemRefact item) {
         this.item = item;
     }
 

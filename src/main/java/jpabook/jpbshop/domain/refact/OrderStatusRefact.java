@@ -1,6 +1,6 @@
 package jpabook.jpbshop.domain.refact;
 
-public enum OrderStatus {
+public enum OrderStatusRefact {
     ORDER, CANCEL
 
 }

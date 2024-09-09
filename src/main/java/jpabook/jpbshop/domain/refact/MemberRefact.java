@@ -11,7 +11,7 @@ public class MemberRefact {
     @Column(name = "MEMBER_ID")
     private Long id;
     @OneToMany(mappedBy = "memberRefact")
-    private List<Order> orders = new ArrayList<>();
+    private List<OrderRefact> orders = new ArrayList<>();
     // 관계상 new ArrayList (JPA, 하이버네이트)
 
     private String name;

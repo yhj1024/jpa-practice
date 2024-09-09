@@ -1,7 +1,7 @@
 package jpabook.jpbshop.domain;
 
-import jpabook.jpbshop.domain.refact.Order;
-import jpabook.jpbshop.domain.refact.OrderItem;
+import jpabook.jpbshop.domain.refact.OrderRefact;
+import jpabook.jpbshop.domain.refact.OrderItemRefact;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -73,10 +73,10 @@ public class JpaMain4 {
         try {
 
             // 주문을 한다고 하면
-            Order order = new Order();
+            OrderRefact order = new OrderRefact();
             // addOrderItem 로 양방향 연관관계를 딱 잡는다
             // 이러면 주문을 만들고 주문 아이템을 쭉쭉 만들 수 있다
-            order.addOrderItem(new OrderItem());
+            order.addOrderItem(new OrderItemRefact());
 
             // 아니면 그냥 아래처럼 써도 된다
             // 양방향 연관관계가 반드시 필요한것은 아니다
