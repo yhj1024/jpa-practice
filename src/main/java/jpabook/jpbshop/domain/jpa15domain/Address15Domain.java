@@ -9,6 +9,12 @@ public class Address15Domain {
     private String street;
     private String zipCode;
 
+    public Address15Domain(String city, String street, String zipCode) {
+        this.city = city;
+        this.street = street;
+        this.zipCode = zipCode;
+    }
+
     public String getCity() {
         return city;
     }
