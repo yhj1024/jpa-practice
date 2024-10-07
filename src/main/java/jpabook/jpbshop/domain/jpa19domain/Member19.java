@@ -1,9 +1,8 @@
 package jpabook.jpbshop.domain.jpa19domain;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import jpabook.jpbshop.domain.Team;
+
+import javax.persistence.*;
 
 @Entity
 public class Member19 {
@@ -16,6 +15,10 @@ public class Member19 {
 
     @Embedded // 생략해도 되지만 명시적으로
     private Address19 address;
+
+    @ManyToOne
+    @JoinColumn(name="TEAM_ID")
+    private Team team;
 
     public Long getId() {
         return id;
