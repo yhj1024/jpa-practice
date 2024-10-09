@@ -9,6 +9,9 @@ public class Member {
     @Column(name = "MEMBER_ID")
     private Long id;
     private String name;
+
+    private int age;
+
     private String city;
     private String street;
     private String zipCode;
@@ -51,5 +54,25 @@ public class Member {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                '}';
     }
 }
