@@ -38,3 +38,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+hs_**.log
+replay_**.log
+
