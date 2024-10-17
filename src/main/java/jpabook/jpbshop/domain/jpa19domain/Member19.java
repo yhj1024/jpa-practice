@@ -16,6 +16,9 @@ public class Member19 {
     @Embedded // 생략해도 되지만 명시적으로
     private Address19 address;
 
+    @Enumerated(EnumType.STRING) // 기본이 ORDINAL 이라 주의 필요
+    private MemberType type;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="TEAM_ID")
     private Team team;
@@ -56,5 +59,13 @@ public class Member19 {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public MemberType getType() {
+        return type;
+    }
+
+    public void setType(MemberType type) {
+        this.type = type;
     }
 }
