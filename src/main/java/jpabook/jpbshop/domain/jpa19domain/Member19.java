@@ -13,6 +13,8 @@ public class Member19 {
 
     private String username;
 
+    private int age;
+
     @Embedded // 생략해도 되지만 명시적으로
     private Address19 address;
 
@@ -67,5 +69,13 @@ public class Member19 {
 
     public void setType(MemberType type) {
         this.type = type;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
