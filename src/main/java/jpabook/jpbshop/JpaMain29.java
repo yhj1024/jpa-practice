@@ -61,6 +61,22 @@ public class JpaMain29 {
         // 이러면 명시적 조인을 이용해야함
         // String query = "select m.username from Team t join t.members m"
 
+        // 경로 표현식 예제
+        // select o.member.team from Order o : 성공
+        // select t.members from Team : 성공
+        // select t.members.username from Team : 실패
+        // select m.username from Team t join t.members m : 성공
+
+        // 경로 탐색을 사용한 묵시적 조인 시 주의 사항
+        // 항상 내부 조인
+        // 컬렉션은 경로 탐색의 끝, 명시적 조인을 통해 별칭을 얻어야함
+        // 경로 탐색은 주로 SELECT, WHERE 절에서 사용하지만 묵시적 조인으로 인해
+        // SQL 의 FROM (JOIN) 절에 영향을 줌
+
+        // 실무 : 가급적 묵시적 조인 대신에 명시적 조인 사용
+        // 조인은 SQL 튜닝에 중요 포인트 이므로
+        // 묵시적 조인은 조인이 일어나는 상황을 한 눈에 파악하기 어려움
+
         em.flush();
         em.clear();
 
