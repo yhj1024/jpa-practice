@@ -23,7 +23,7 @@ public class Member19 {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="TEAM_ID")
-    private Team team;
+    private Team19 team;
 
     // 양방향 연관관계 편의 메서드
     public void changeTeam(Team team) {
@@ -55,11 +55,11 @@ public class Member19 {
         this.address = address;
     }
 
-    public Team getTeam() {
+    public Team19 getTeam() {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void setTeam(Team19 team) {
         this.team = team;
     }
 

@@ -3,6 +3,7 @@ package jpabook.jpbshop;
 import jpabook.jpbshop.domain.Member;
 import jpabook.jpbshop.domain.Team;
 import jpabook.jpbshop.domain.jpa19domain.Member19;
+import jpabook.jpbshop.domain.jpa19domain.Team19;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -33,7 +34,7 @@ public class JpaMain24 {
 
         try{
 
-            Team team = new Team();
+            Team19 team = new Team19();
             team.setName("팀A");
             em.persist(team);
 
