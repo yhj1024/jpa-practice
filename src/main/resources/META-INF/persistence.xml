@@ -19,7 +19,7 @@
             <property name="hibernate.use_sql_comments"  value="true"/>
 <!--            <property name="hibernate.jdbc.batch_size"  value="10"/>-->
                         <property name="hibernate.hbm2ddl.auto" value="create" /> <!-- create 로 하면 테이블 드랍 후에 생성 none 으로 하면 그냥 생성 -->
-
+<!--            <property name="hibernate.default_batch_size" value="1000"/> global 기본 batch size -->
             <!--
                 create-drop : 애플리케이션 종료 시점에 테이블 삭제
                 update : 변경분만 반영 (운영 DB에는 사용하면 안됨)
